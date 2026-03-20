@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AlgoSensei 🥋
 
-## Getting Started
+Your AI-powered mentor for Data Structures & Algorithms. 
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00ff88?style=for-the-badge&logo=vercel&logoColor=black)](#) <!-- Add your live link here -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![AlgoSensei Screenshot](/public/og-image.png) <!-- Add a real screenshot here -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Why I Built This
+After grinding through 200+ LeetCode problems to prep for software engineering interviews, I realized there's a huge gap in how we learn DSA. Staring at raw solutions or watching 40-minute videos often feels passive. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I wanted a tool that **doesn't spoon-feed answers**. I built AlgoSensei to simulate the experience of pair-programming with a Staff Engineer — it asks Socratic questions, nudges you toward patterns (like Sliding Window or Two Pointers), and demands rigour in Big-O complexity analysis before ever showing you code.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
+- **Framework:** Next.js 14 (App Router, Edge Runtime)
+- **Styling:** Tailwind CSS (custom hacker/terminal theme)
+- **AI / LLM:** Google Gemini API (`gemini-1.5-flash`) via `@google/generative-ai`
+- **Markdown Rendering:** `react-markdown`, `remark-gfm`, and `react-syntax-highlighter`
+- **Typography:** JetBrains Mono & Sora (Google Fonts)
 
-## Learn More
+## Features
+- 🧠 **Socratic Problem Solving:** Guides you through problems stage-by-stage (Understand → Pattern → Approach → Code).
+- ⚡ **Edge Streaming Responses:** Real-time token streaming via Vercel Edge functions.
+- 🎨 **Code Highlighting:** Full syntax highlighting and copy-to-clipboard functionality for Python/JS snippets.
+- 📱 **Mobile-First UI:** Responsive 100dvh chat interface with pinned inputs and bottom auto-scroll.
 
-To learn more about Next.js, take a look at the following resources:
+## How to Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/algosensei.git
+   cd algosensei
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Set up Environment Variables**
+   Create a `.env.local` file in the root directory:
+   ```bash
+   GOOGLE_API_KEY=your_actual_api_key_here
+   ```
+   > You can get a free Gemini API key from [aistudio.google.com](https://aistudio.google.com/app/apikey).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Open the app**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment Notes
+This project is configured out-of-the-box for [Vercel](https://vercel.com). Because the AI route uses the Edge runtime, ensure the `GOOGLE_API_KEY` is added to your Vercel Project Environment Variables.
+
+---
+*Built with 💚 and Google Gemini*
